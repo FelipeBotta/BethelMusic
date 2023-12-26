@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
+<script src="js/Album.js"></script>
+    <title>Main Page</title>
+</head>
+<body>
+
+    <header class="head">
+
+        <nav class="social">
+            <a href="#">iTunes</a>
+            <a href="#">Spotify</a>
+            <a href="#">Youtube</a>
+        </nav>
+
+        <p class="title">BETHEL MUSIC</p>
+
+        <span class="right">
+            <p>Cart</p>
+            <p class="counter">0</p>
+            <p>Menu</p>
+            <p class="material-symbols-outlined">Menu</p>
+            
+        </span>
+
+
+    </header>
+
+    <h2 class="aparece">Appears On</h2>
+
+
+    <div class="container">
+
+        <album-component
+        titulo="Sabbath Bloody Sabbath"
+        autor="Black Sabbath"
+        ano="1973"
+        foto="assets/sabbath.jpg"
+        desc="Album"
+        estilo="Heavy Metal"
+      ></album-component>
+
+      <album-component
+      titulo="Vulgar Display of Power"
+      autor="Pantera"
+      ano="1992"
+      foto="assets/vulgar.jpg"
+      desc="Album"
+      estilo="Heavy Metal"
+      ></album-component>
+
+      <album-component
+      titulo="Chaos A.D"
+      autor="Sepultura"
+      ano="1993"
+      foto="assets/chaos.jpg"
+      desc="Album"
+      estilo="Trash Metal"
+    ></album-component>
+
+    </div>
+
+    <span class="ver">
+        <button class="bt">View All ↓</button>
+    </span>
+
+    
+</body>
+</html>

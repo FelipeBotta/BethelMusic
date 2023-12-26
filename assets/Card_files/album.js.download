@@ -1,0 +1,126 @@
+class album extends HTMLElement{
+    constructor(){
+        super();
+
+        const shadow = this.attachShadow({mode:"open"});
+        shadow.appendChild(this.build());
+        shadow.appendChild(this.styles());
+    }
+
+    build(){
+        const componentRoot = document.createElement("div");
+        componentRoot.setAttribute("class","container");
+
+        const cover = document.createElement("div");
+        cover.setAttribute("class","cover");
+
+        const desc = document.createElement("span");
+        desc.setAttribute("class","desc");
+
+        const albuum = document.createElement("img");
+        albuum.src = this.getAttribute("photo");
+        albuum.alt = "Foto do album"
+        cover.appendChild(albuum);
+        cover.appendChild(desc);
+
+        const conteudo = document.createAttribute("div");
+        conteudo.setAttribute("class","conteudo")
+
+        const titlo = document.createElement("h1");
+        conteudo.setAttribute("class","titlo")
+
+        const autor = document.createElement("p");
+        autor.setAttribute("class","autor");
+
+        const ano = document.createElement("p");
+        ano.setAttribute("class","ano")
+
+        conteudo.appendChild(titulo)
+        conteudo.appendChild(autor)
+        conteudo.appendChild(ano)
+
+        componentRoot.appendChild(cover)
+        componentRoot.appendChild(conteudo)
+
+        return componentRoot;
+
+    }
+
+    styles(){
+        const style = document.createElement("style");
+        style.textContent = `
+        .cover{
+            display: flex;
+            padding: 1rem;
+            margin-bottom: -1rem;
+        }
+        
+        
+        .desc{
+            font-family: Arial, Helvetica, sans-serif;
+            position:absolute;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 16px;
+            margin-left: .5rem;
+            background-color: rgba(128, 128, 128, 0.274);
+            top: 3%
+        }
+        
+        .conteudo{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        
+        .conteudo .titlo{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            margin-bottom: 1rem;
+        }
+        
+        .conteudo > p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: .5rem;
+        }
+        
+        .conteudo .ano{
+            color: grey;
+        }
+        
+        .botoes{
+            display: flex;
+            flex-direction: row;
+            padding: 0 1rem;
+            gap: 1rem;
+        }
+        
+        .botoes .listen{
+            background-color: rgba(0, 255, 255, 0);
+            border: .5px solid black;
+            border-radius: 16px;
+            padding: 10px 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .botoes .resources{
+            background-color: rgba(0, 255, 255, 0);
+            border: .5px solid black;
+            border-radius: 16px;
+            padding: 10px 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        `
+    ;
+        return style;
+
+    }
+}
+
+customElements.define("album", album);
