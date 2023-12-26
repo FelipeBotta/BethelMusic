@@ -12,14 +12,12 @@
             const autor = this.getAttribute("autor");
             const ano = this.getAttribute("ano");
             const foto = this.getAttribute("foto");
-            const desc = this.getAttribute("desc");
             const estilo = this.getAttribute("estilo");
         
             this.shadowRoot.querySelector(".titulo").textContent = titulo;
             this.shadowRoot.querySelector(".autor").textContent = autor;
             this.shadowRoot.querySelector(".ano").textContent = ano;
             this.shadowRoot.querySelector(".cover img").src = foto;
-            this.shadowRoot.querySelector(".desc").textContent = desc;
             this.shadowRoot.querySelector(".estilo").textContent = estilo;
         }
         
@@ -32,14 +30,10 @@
             const cover = document.createElement("div");
             cover.setAttribute("class", "cover");
         
-            const desc = document.createElement("span");
-            desc.setAttribute("class", "desc");
-        
             const albuum = document.createElement("img");
             albuum.src = this.getAttribute("foto");
             albuum.alt = "Foto do album";
             cover.appendChild(albuum);
-            cover.appendChild(desc);
         
             const botoes = document.createElement("div");
             botoes.setAttribute("class", "botoes");
@@ -90,20 +84,7 @@
             padding: 1rem;
             margin-bottom: -1rem;
         }
-        
-        
-        .desc{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size:8px;
-            position:absolute;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 8px;
-            margin-left: .5rem;
-            background-color: rgba(128, 128, 128, 0.274);
-            top: 32%;
-        }
-        
+
         .conteudo{
             display: flex;
             flex-direction: column;
